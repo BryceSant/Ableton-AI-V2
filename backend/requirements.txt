@@ -1,0 +1,20 @@
+langchain_ollama
+langchain_core
+langchain
+langchain_community
+pydantic
+faiss-cpu==1.7.4 #for it to work with macOS
+beautifulsoup4
+numpy==1.26.4
+
+#TODO: remove? looks like faiss 1.6.4 works
+#For MacOS:  to install faiss-cpu
+#1. brew install swig
+#2. Download mini conda
+#3. run conda init zsh
+#4. source ~/.zshrc
+#5. conda activate
+#6. conda create -n langchain_env python=3.9 -y (accept the terms)
+#7. conda activate langchain_env
+#8. pip install -r requirements.txt
+#9. conda install -c conda-forge faiss-cpu
