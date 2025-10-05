@@ -2,11 +2,14 @@ from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains.combine_documents import create_stuff_documents_chain
 
+MODEL = "gemma3:1b" #model that will be used
+TEMPERATURE = 0.2 #model's temperature
+
 #chain
 def create_chain(input):
     model = ChatOllama(
-        model = "gemma3:1b",
-        temperature = 0.2,
+        model = MODEL,
+        temperature = TEMPERATURE,
         think = False,
     )
 
