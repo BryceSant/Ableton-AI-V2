@@ -3,6 +3,7 @@ langchain_core
 langchain
 langchain_community
 pydantic
+python-dotenv
 #faiss-cpu==1.7.4 #for it to work with macOS
 faiss-cpu==1.10.0 #for it to work with W11
 beautifulsoup4
