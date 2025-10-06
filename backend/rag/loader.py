@@ -38,8 +38,6 @@ def load_pdfs(pdf_folder_path):
     )
 
     split_docs = splitter.split_documents(pdf_list)
-
-    print(split_docs)
     
     return split_docs
 
