@@ -8,7 +8,7 @@ from rag.vectorestore import create_vector_store
 PDF_FILE_LOCATION = "backend/documents"
 PERSIST_DIR = "backend/vectorstore"
 MODEL = 'nomic-embed-text:latest'
-INPUT = "What is Ableton Live?"
+INPUT = "What are the best keyboard shortcuts that I should know?"
 
 
 vectorStore = create_vector_store(PDF_FILE_LOCATION, PERSIST_DIR)
