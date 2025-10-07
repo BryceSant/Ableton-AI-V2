@@ -10,7 +10,7 @@ beautifulsoup4
 numpy==1.26.4
 pypdf
 os
-
+langchain_chroma
 
 #TODO: remove? looks like faiss 1.6.4 works
 #For MacOS:  to install faiss-cpu
