@@ -12,6 +12,27 @@ PERSIST_DIR = "backend/vectorstore"
 MODEL = 'nomic-embed-text:latest'
 
 
-create_vector_store(PDF_FILE_LOCATION, PERSIST_DIR, MODEL)
+#create_vector_store(PDF_FILE_LOCATION, PERSIST_DIR, MODEL)
 
 #print(os.getcwd())
+
+INPUT = "What is Ableton Live?"
+
+#chain = create_chain(INPUT, PDF_FILE_LOCATION, PERSIST_DIR)
+
+
+vectorStore = create_vector_store(PDF_FILE_LOCATION, PERSIST_DIR)
+chain = create_chain(vectorStore)
+
+response = chain.stream({
+    "input": "What is Ableton?"
+})
+
+print(response)
+
+fullAnswer = ""
+
+for chunk in response:
+    if "answer" in chunk:
+        print(chunk["answer"], end="", flush=True)
+        fullAnswer += chunk
