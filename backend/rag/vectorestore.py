@@ -2,8 +2,8 @@ from rag.embeddings import return_embedding
 from rag.loader import load_pdfs
 from langchain_chroma import Chroma
 
-def create_vector_store(pdfs_file_location, persist_dir, embedding_model_name):
-    embedding = return_embedding(embedding_model_name)
+def create_vector_store(pdfs_file_location, persist_dir):
+    embedding = return_embedding()
 
     docs = load_pdfs(pdfs_file_location)
     if not docs:
