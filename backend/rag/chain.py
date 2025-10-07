@@ -1,12 +1,16 @@
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain.chains import create_retrieval_chain
+from rag.vectorestore import create_vector_store
 
 MODEL = "gemma3:1b" #model that will be used
 TEMPERATURE = 0.2 #model's temperature
 
+#create_vector_store(PDF_FILE_LOCATION, PERSIST_DIR)
+
 #chain
-def create_chain(input):
+def create_chain(vectorStore):
     model = ChatOllama(
         model = MODEL,
         temperature = TEMPERATURE,
@@ -14,34 +18,23 @@ def create_chain(input):
     )
 
     prompt = ChatPromptTemplate.from_template("""
-    Be a helpful assistant:
+    Answer the user's question:
+    Context:{context}
     Question: {input}
     """
     )
 
-    # chain = create_stuff_documents_chain(
-    #     llm=model,
-    #     prompt=prompt,
-    # )
+    chain = create_stuff_documents_chain(
+        llm=model,
+        prompt=prompt,
+    )
 
-    chain = prompt | model
+    retriever = vectorStore.as_retriever(search_kwargs={"k": 5}) 
+    #gets the k number of relevant arguments
 
-    # response = chain.stream({
-    #     "input":input,
-    #     "context":"",
-    # })
+    retrieval_chain = create_retrieval_chain(
+        retriever, #Will fetch most relevant documents from vectorStore
+        chain,
+    )
 
-    response = chain.stream({
-        "input": input,
-        #"context": "Hello"
-    })
-
-    # for chunk in response:
-    #     if "answer" in chunk:
-    #         print(response["answer"], end="", flush=True)
-    for chunk in response:
-        print(chunk.content, end="", flush=True)
-
-
-
-#def give_response(input, chain):
+    return retrieval_chain
