@@ -2,7 +2,6 @@ from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_retrieval_chain
-from rag.vectorestore import create_vector_store
 
 MODEL = "gemma3:1b" #model that will be used
 TEMPERATURE = 0.2 #model's temperature
@@ -37,4 +36,4 @@ def create_chain(vectorStore):
         chain,
     )
 
-    return retrieval_chain
+    return retrieval_chain, retriever #returning retriever to get chunks
