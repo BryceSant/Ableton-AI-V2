@@ -1,9 +1,19 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from rag.chain import create_chain
+from rag.vectorestore import create_vector_store
+from pydantic import BaseModel
+
+
+PDF_FILE_LOCATION = "documents"
+PERSIST_DIR = "vectorstore"
+#MODEL = 'nomic-embed-text:latest'
+#INPUT = "What are the best keyboard shortcuts that I should know?"
 
 origins = [
     "http://127.0.0.1:8000",
-    "http://localhose:8000",
+    "http://localhost:8000",
+    "null",
 ]
 
 app = FastAPI()
@@ -16,7 +26,29 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-async def root():
-    return {"Hello": "Heehee"}
+vectorStore = create_vector_store(PDF_FILE_LOCATION, PERSIST_DIR)
+chain, retriever = create_chain(vectorStore)
 
+# Define input schema
+class Message(BaseModel):
+    message: str
+
+
+@app.post("/chat")
+async def chat_endpoint(msg: Message):
+    response = chain.stream({
+    "input": msg.message
+    })
+
+    fullAnswer = ""
+
+    #For Debugging
+    for chunk in response:
+        if "answer" in chunk:
+            print(chunk["answer"], end="", flush=True)
+            fullAnswer += chunk["answer"]
+    
+    print("\n\n")
+    print(type(fullAnswer))
+    
+    return {"reply": fullAnswer}
