@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ableton AI Assistant</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>LangChain Chatbot</title>
+  <style>
+    body { font-family: sans-serif; background: #fafafa; padding: 20px; }
+    #chatbox { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: auto; background: white; }
+    #msg { width: 80%; padding: 8px; }
+    button { padding: 8px 12px; }
+    .user { color: blue; margin: 5px 0; }
+    .bot { color: green; margin: 5px 0; }
+  </style>
 </head>
 <body>
-    <div id="header">
-        <header>
-            <img src="images/ableton-logo.jpg" alt="Ableton Live Logo">
-            <h1>Ableton Live AI Assistant!</h1>
-            <!-- TODO: image goes here -->
-        </header>
-    </div>
+  <h2>LangChain Chatbot</h2>
+  <div id="chatbox"></div>
+  <input id="msg" type="text" placeholder="Type your message..." />
+  <button onclick="send()">Send</button>
 
-
-    <div id="chatBox"></div>
-
-    <div id="inputArea">
-        <input type="text" id="userInput" placeholder="Ask me something..."/>
-        <button id="sendButton">Send</button>
-    </div>
-
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
