@@ -50,5 +50,15 @@ async def chat_endpoint(msg: Message):
     
     print("\n\n")
     print(type(fullAnswer))
-    
+
+    chunks = retriever.invoke(msg.message)
+    print(f"Chunks retrieved for query: '{msg.message}'\n")
+    for i, chunk in enumerate(chunks):
+        print(f"--- Chunk {i+1} ---")
+        print("Content:", chunk.page_content)
+        print("Metadata:", chunk.metadata)
+        print()
+        
     return {"reply": fullAnswer}
+
+
