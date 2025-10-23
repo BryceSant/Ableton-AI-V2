@@ -3,16 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Ableton AI Assistant</title>
-  <style>
-
-  </style>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Ableton AI Assistant</h2>
-  <div id="chatbox"></div>
-  <input id="msg" type="text" placeholder="Type your message..." />
-  <button onclick="send()">Send</button>
+  <header class="header">
+    <img src="images/ableton-logo.jpg" alt="Ableton-Logo"> 
+    <h2>Ableton AI Assistant</h2>
+    <h3>Chatbot</h3>
+    <h3>About</h3>
+  </header>
+
+  <div class="chatbox"> 
+    <div id="chatbox"></div>
+  </div>
+
+  <div class="input-area">
+    <input id="msg" type="text" placeholder="Type your message..." />
+    <button onclick="send()">Send</button>
+  </div>
+
+  <footer class="footer">
+    <p>Copyright Bryce Santiago</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
