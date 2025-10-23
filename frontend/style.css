@@ -30,3 +30,23 @@ button {
     color: green; 
     margin: 5px 0; 
 }
+
+.header {
+    display: flex;
+    
+    justify-content: space-between;
+
+}
+
+.menu {
+    display: flex;
+}
+
+.ableton-logo-and-title {
+    display: flex;
+}
+
+.body-chatbot {
+    display: flex;
+    flex-direction: column;
+}
