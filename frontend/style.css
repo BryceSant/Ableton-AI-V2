@@ -63,3 +63,13 @@ html, body {
     display: flex;
     align-items: end;
 }
+
+.user { 
+    color: blue; 
+    margin: 5px 0; 
+}
+
+.bot { 
+    color: green; 
+    margin: 5px 0; 
+}
