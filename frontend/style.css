@@ -3,6 +3,10 @@
     src: url('font/DINNeuzeitGroteskLT-Light.woff2') format('woff2');
 }
 
+b {
+    font-size: 1rem;
+}
+
 html, body { 
     background: #22242D;  
     height: 100vh;
@@ -12,6 +16,7 @@ html, body {
     padding: 0; 
     color: white;
     font-family: "DIN Neuzeit Grotesk", serif;
+    font-size: 0.95rem;
 }
 
 .header {
@@ -47,10 +52,11 @@ html, body {
 }
 
 #chatbox { 
-    border: 1px solid #ccc; 
+    border: 1.5px solid #ccc; 
     padding: 1rem; 
     overflow-y: auto; 
     flex: 8;
+    border-radius: 4px;
     background-color: #31343e;
 }
 
@@ -66,6 +72,14 @@ html, body {
     flex: 21;
     background-color: #494B57;
     color: white;
+    border-radius: 2px;
+}
+
+#sendButton { 
+    flex: 1;
+    color: white;
+    background-color: #494B57;
+    border-radius: 3px;
 }
 
 .user { 
@@ -82,18 +96,15 @@ html, body {
     border-radius: 6px;
 }
 
+.bot-reply { /*changes the text that's returned to me from backend*/
+    font-family: inherit;
+    font-size: inherit;
+    white-space: pre-wrap;
+    display: inline;
+}
+
 .text-inside-chat {
     padding: 0.2rem;
-}
-
-.pre { /*changes the text that's returned to me*/
-    font-family: "DIN Neuzeit Grotesk", serif;
-}
-
-#sendButton { 
-    flex: 1;
-    color: white;
-    background-color: #494B57;
 }
 
 .footer {

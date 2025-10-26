@@ -37,8 +37,7 @@ async function send() {
   chatbox.innerHTML += `
   <div class="bot">
     <span class="text-inside-chat">
-      <b>Bot:</b>
-      <pre style="display:inline; white-space:pre-wrap;">${data.reply}</pre>
+      <pre class="bot-reply"><b>Bot: </b>${data.reply}</pre>
     </span>
   </div>`;
   chatbox.scrollTop = chatbox.scrollHeight;
