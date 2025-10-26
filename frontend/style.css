@@ -54,7 +54,7 @@ html, body {
     display: flex;
     align-items:center;
     color: white;
-    padding: 0.3rem 0rem 0rem 0rem;
+    margin: 0.3rem 0rem 0rem 0rem;
 }
 
 #msg {
@@ -65,13 +65,15 @@ html, body {
 
 .user { 
     color: blue; 
-    margin: 5px 0; 
+    margin: 0.5rem -0.5rem; 
+    padding: 0.2rem;
     background-color: red;
 }
 
 .bot { 
     color: green; 
-    margin: 5px 0; 
+    margin: 0.5rem -0.5rem; 
+    padding: 0.2rem;
     background-color: yellow;
 }
 
