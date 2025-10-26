@@ -4,7 +4,6 @@
 }
 
 html, body { 
-    font-family: sans-serif; 
     background: #22242D;  
     height: 100vh;
     display: flex;
@@ -81,6 +80,14 @@ html, body {
     padding: 0.2rem;
     background-color: #61636d;
     border-radius: 6px;
+}
+
+.text-inside-chat {
+    padding: 0.2rem;
+}
+
+.pre { /*changes the text that's returned to me*/
+    font-family: "DIN Neuzeit Grotesk", serif;
 }
 
 #sendButton { 

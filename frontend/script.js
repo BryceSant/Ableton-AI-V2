@@ -5,11 +5,15 @@ async function send() {
   if (!message) return;
 
   // Display message
-  chatbox.innerHTML += `<div class="user"><b>You:</b> ${message}</div>`;
+  chatbox.innerHTML += `<div class="user">
+                            <span class="text-inside-chat">
+                              <b>You:</b> ${message}
+                            </span>
+                        </div>`;
   msgInput.value = "";
 
   //Temp message to be shown while it renders
-  const tempText = '<div class="bot" id="tempBot">Assistant is typing...</div>'
+  const tempText = '<div class="bot" id="tempBot"><span class="text-inside-chat"><b>Assistant is typing...<b></span></div>'
   chatbox.innerHTML += tempText
 
   // Send to backend
@@ -32,8 +36,10 @@ async function send() {
   //Add chatbot message to chatbot
   chatbox.innerHTML += `
   <div class="bot">
-    <b>Bot:</b>
-    <pre style="display:inline; white-space:pre-wrap;">${data.reply}</pre>
+    <span class="text-inside-chat">
+      <b>Bot:</b>
+      <pre style="display:inline; white-space:pre-wrap;">${data.reply}</pre>
+    </span>
   </div>`;
   chatbox.scrollTop = chatbox.scrollHeight;
 }
