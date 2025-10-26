@@ -20,7 +20,7 @@ html, body {
     display: flex;
     gap: 1rem;
     align-items: center;
-    margin: 0.7rem;
+    margin: 0.7rem 0.7rem 0.7rem 0.8rem;
 }
 
 #title {
@@ -54,6 +54,7 @@ html, body {
     display: flex;
     align-items:center;
     color: white;
+    padding: 0.3rem 0rem 0rem 0rem;
 }
 
 #msg {
@@ -65,11 +66,13 @@ html, body {
 .user { 
     color: blue; 
     margin: 5px 0; 
+    background-color: red;
 }
 
 .bot { 
     color: green; 
     margin: 5px 0; 
+    background-color: yellow;
 }
 
 #sendButton { 
