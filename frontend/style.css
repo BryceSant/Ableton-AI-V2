@@ -52,7 +52,7 @@ html, body {
     padding: 1rem; 
     overflow-y: auto; 
     flex: 8;
-    background-color: #42444F;
+    background-color: #31343e;
 }
 
 .input-area {
@@ -70,15 +70,17 @@ html, body {
 }
 
 .user { 
-    margin: 0.5rem -0.5rem; 
+    margin: 0.8rem 0rem; 
     padding: 0.2rem;
-    background-color: red;
+    background-color: #494b57;
+    border-radius: 6px;
 }
 
 .bot { 
-    margin: 0.5rem -0.5rem; 
+    margin: 0.8rem 0rem; 
     padding: 0.2rem;
-    background-color: yellow;
+    background-color: #61636d;
+    border-radius: 6px;
 }
 
 #sendButton { 
