@@ -70,14 +70,12 @@ html, body {
 }
 
 .user { 
-    color: blue; 
     margin: 0.5rem -0.5rem; 
     padding: 0.2rem;
     background-color: red;
 }
 
 .bot { 
-    color: green; 
     margin: 0.5rem -0.5rem; 
     padding: 0.2rem;
     background-color: yellow;
