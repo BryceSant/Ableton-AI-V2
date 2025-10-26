@@ -18,7 +18,7 @@ html, body {
 .header {
     display: flex;
     justify-content: space-between;
-    flex: 3;
+    flex: 2;
     background-color: #22242D;
 }
 
@@ -56,15 +56,15 @@ html, body {
 }
 
 .input-area {
-    flex: 1;
+    flex: 0;
     display: flex;
     align-items:center;
     color: white;
-    margin: 0.3rem 0rem 0rem 0rem;
+    margin-top: 0.5rem;
 }
 
 #msg {
-    flex: 19;
+    flex: 21;
     background-color: #494B57;
     color: white;
 }
