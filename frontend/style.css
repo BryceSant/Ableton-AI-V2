@@ -87,6 +87,7 @@ html, body {
     padding: 0.2rem;
     background-color: #494b57;
     border-radius: 6px;
+    /*display: inline-block;*/
 }
 
 .bot { 
@@ -100,7 +101,11 @@ html, body {
     font-family: inherit;
     font-size: inherit;
     white-space: pre-wrap;
+    /*white-space: pre-line;
+    display: inline-block;
+    margin-top: -0.08rem;*/
     display: inline;
+    
 }
 
 .text-inside-chat {
