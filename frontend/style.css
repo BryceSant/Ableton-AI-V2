@@ -7,6 +7,11 @@ b {
     font-size: 1rem;
 }
 
+::selection {
+    color: black;
+    background-color: #b0ddeb;
+}
+
 html, body { 
     background: #22242D;  
     height: 100vh;
@@ -49,6 +54,7 @@ html, body {
     display: flex;
     flex-direction: column;
     margin: 0.8rem 0.8rem 0rem 0.8rem;
+    height: 80vh; /*enables overflow - scrollable textbox */
 }
 
 #chatbox { 
@@ -80,6 +86,11 @@ html, body {
     color: white;
     background-color: #494B57;
     border-radius: 3px;
+}
+
+#sendButton:active { 
+    color: black;
+    background-color: #ffad56;
 }
 
 .user { 
