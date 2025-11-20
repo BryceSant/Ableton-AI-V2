@@ -3,7 +3,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_retrieval_chain
 
-MODEL = "gemma3:1b" #model that will be used
+MODEL = "mistral:14b-instruct" #model that will be used
 TEMPERATURE = 0.2 #model's temperature
 PROMPT = """
 You are an expert music production teacher with deep knowledge of Ableton Live 12. 
@@ -23,7 +23,7 @@ def create_chain(vectorStore):
     model = ChatOllama(
         model = MODEL,
         temperature = TEMPERATURE,
-        think = False,
+        think=False,
     )
 
     prompt = ChatPromptTemplate.from_template(f"""
