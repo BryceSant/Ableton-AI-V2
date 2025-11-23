@@ -3,7 +3,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_retrieval_chain
 
-MODEL = "mistral:14b-instruct" #model that will be used
+MODEL = "qwen2.5:14b-instruct" #model that will be used
 TEMPERATURE = 0.2 #model's temperature
 PROMPT = """
 You are an expert music production teacher with deep knowledge of Ableton Live 12. 
