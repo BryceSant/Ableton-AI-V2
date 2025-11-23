@@ -47,3 +47,20 @@ def create_chain(vectorStore):
     )
 
     return retrieval_chain, retriever #returning retriever to get chunks
+
+def create_chain_no_pdf():
+    model = ChatOllama(
+        model = MODEL,
+        temperature = TEMPERATURE,
+        think=False,
+    )
+    
+    prompt = ChatPromptTemplate.from_template(f"""
+    {PROMPT}
+    Question: {{input}}
+    """
+    )
+
+    chain = prompt | model
+
+    return chain

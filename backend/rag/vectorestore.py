@@ -7,12 +7,17 @@ def create_vector_store(pdfs_file_location, persist_dir):
 
     docs = load_pdfs(pdfs_file_location)
     if not docs:
-        raise ValueError("No docs found!")
+        #raise ValueError("No docs found!")
+        print("No PDF's were found.")
 
-    vector_store = Chroma.from_documents(
-        documents = docs,
-        embedding = embedding,
-        persist_directory = persist_dir,
-    )
+        return None
 
-    return vector_store
+    else:
+        print("PDF's were found.")
+        vector_store = Chroma.from_documents(
+            documents = docs,
+            embedding = embedding,
+            persist_directory = persist_dir,
+        )
+
+        return vector_store
