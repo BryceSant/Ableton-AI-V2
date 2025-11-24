@@ -4,7 +4,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_retrieval_chain
 
 MODEL = "qwen2.5:14b-instruct" #model that will be used
-TEMPERATURE = 0 #model's temperature
+TEMPERATURE = 0.0 #model's temperature
 PROMPT = """ """
 
 #create_vector_store(PDF_FILE_LOCATION, PERSIST_DIR)
