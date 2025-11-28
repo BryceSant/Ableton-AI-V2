@@ -36,10 +36,6 @@ Goal:
 Deliver reliable, accurate, and helpful guidance that balances official Ableton documentation with real-world music production best practices relevant to Ableton Live 12.
 """
 
-
-
-
-
 #create_vector_store(PDF_FILE_LOCATION, PERSIST_DIR)
 
 #chain
