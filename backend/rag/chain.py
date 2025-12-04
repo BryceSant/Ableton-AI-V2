@@ -3,7 +3,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains import create_retrieval_chain
 
-MODEL = "qwen2.5:14b-instruct" #model that will be used
+MODEL = "gemma3:1b" #model that will be used
 TEMPERATURE = 0.0 #model's temperature
 PROMPT = """ 
 You are an expert music production instructor with strong knowledge of Ableton Live 12. Your role is to help beginner to intermediate producers with clear, practical, and easy-to-understand guidance.
